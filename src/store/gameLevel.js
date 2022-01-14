@@ -57,6 +57,7 @@ const init = {
       ),
 
       answer: 'justify-content: flex-end',
+      isValid: false,
       pondHeight: 1,
       colors: ['green'],
       lilypad: { justifyContent: 'flex-end' },
