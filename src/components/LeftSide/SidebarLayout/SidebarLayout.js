@@ -1,10 +1,10 @@
 import React from 'react';
-
-import Editor from './Editor';
 import classes from './SidebarLayout.module.css';
 
-import LevelSwitcher from './LevelSwitcher';
-import Instructions from './Instructions';
+import LevelSwitcher from '../LevelSwitcher/LevelSwitcher';
+import Instructions from '../Instructions/Instructions';
+import Editor from '../Footer/Editor';
+
 
 function SidebarLayout() {
   return (
@@ -16,7 +16,7 @@ function SidebarLayout() {
         <LevelSwitcher />
       </header>
       <Instructions />
-      <Editor />
+      <Editor/>
     </section>
   );
 }
