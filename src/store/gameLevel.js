@@ -3,7 +3,7 @@ import classes from './gameLevel.module.css';
 
 const init = {
   currentLevel: 1,
-  styles: '', 
+  value: '',
   currentLevels: [
     {
       level: 1,
@@ -56,7 +56,7 @@ const init = {
         </>
       ),
 
-      answer: 'justify-content: flex-end',
+      answer: 'justify-content: flex-end;',
       isValid: false,
       pondHeight: 1,
       colors: ['green'],
@@ -98,6 +98,7 @@ const init = {
       ),
 
       answer: 'justify-content: center',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow'],
       lilypad: { justifyContent: 'center' },
@@ -121,6 +122,7 @@ const init = {
       ),
 
       answer: 'justify-content: space-around',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
       lilypad: { justifyContent: 'space-around' },
@@ -139,6 +141,7 @@ const init = {
       ),
 
       answer: 'justify-content: space-between',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
       lilypad: { justifyContent: 'space-between' },
@@ -179,6 +182,7 @@ const init = {
       ),
 
       answer: 'justify-content: flex-end',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
       lilypad: { justifyContent: 'flex-end' },
@@ -196,6 +200,7 @@ const init = {
       ),
 
       answer: 'justify-content: center; align-items: center;',
+      isValid: false,
       pondHeight: 2,
       colors: ['green', 'yellow', 'red'],
       lilypad: { justifyContent: 'center', alignItems: 'center' },
@@ -214,6 +219,7 @@ const init = {
       ),
 
       answer: 'justify-content: space-around; align-items: flex-end;',
+      isValid: false,
       pondHeight: 2,
       colors: ['green', 'yellow', 'red'],
       lilypad: { justifyContent: 'space-around', alignItems: 'flex-end' },
@@ -247,6 +253,7 @@ const init = {
       ),
 
       answer: 'flex-direction: row-reverse;',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
       lilypad: { flexDirection: 'row-reverse' },
@@ -280,6 +287,7 @@ const init = {
       ),
 
       answer: 'flex-direction: column;',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
       lilypad: { flexDirection: 'column' },
@@ -304,6 +312,7 @@ const init = {
       ),
 
       answer: 'flex-direction: row-reverse; justijy-content: flex-end;',
+      isValid: false,
       pondHeight: 2,
       colors: ['green', 'yellow', 'red'],
       lilypad: { flexDirection: 'row-reverse', justifyContent: 'flex-end' },
@@ -327,6 +336,7 @@ const init = {
       ),
 
       answer: 'flex-direction: column; justijy-content: flex-end;',
+      isValid: false,
       pondHeight: 2,
       colors: ['green', 'yellow', 'red'],
       lilypad: { flexDirection: 'column', justifyContent: 'flex-end' },
@@ -344,6 +354,7 @@ const init = {
       ),
 
       answer: 'flex-direction: column-reverse; justijy-content: space-between;',
+      isValid: false,
       pondHeight: 2,
       colors: ['green', 'yellow', 'red'],
       lilypad: {
@@ -366,6 +377,7 @@ const init = {
 
       answer:
         'flex-direction: row-reverse; align-items: flex-end; justijy-content: center;',
+      isValid: false,
       pondHeight: 3,
       colors: ['green', 'yellow', 'red'],
       lilypad: {
@@ -394,11 +406,10 @@ const init = {
       ),
 
       answer: 'order: 1;',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
-      lilypad: {
-        order: '1',
-      },
+      lilypad: { color: 'yellow', style: { order: '2' } },
     },
     {
       level: 15,
@@ -412,11 +423,10 @@ const init = {
       ),
 
       answer: 'order: -1;',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'green', 'green', 'red', 'green'],
-      lilypad: {
-        order: '-1',
-      },
+      lilypad: { color: 'red', style: { order: '-1' } },
     },
     {
       level: 16,
@@ -429,12 +439,11 @@ const init = {
         </>
       ),
 
-      answer: 'align-self: end',
+      answer: 'align-self: end;',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'green', 'yellow', 'green', 'green'],
-      lilypad: {
-        alignSelf: 'end',
-      },
+      lilypad: { color: 'yellow', style: { alignSelf: 'flex-end' } },
     },
   ],
 };
@@ -450,8 +459,18 @@ const gameSlice = createSlice({
       state.currentLevel = action.payload;
     },
     gameStyle(state, action) {
-      state.styles = action.payload
-    } 
+      state.value = action.payload;
+    },
+    complete(state) {
+      state.currentLevels = state.currentLevels.map((item) =>
+        item.level === state.currentLevel ? { ...item, isValid: true } : item
+      );
+    },
+    notComplete(state) {
+      state.currentLevels = state.currentLevels.map((item) =>
+        item.level === state.currentLevel ? { ...item, isValid: false } : item
+      );
+    },
   },
 });
 
