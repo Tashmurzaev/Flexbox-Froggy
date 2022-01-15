@@ -10,16 +10,17 @@ function ViewBoard() {
     state.game.currentLevels.find((item) => item.level === current)
   );
   console.log(level.answer);
-  const style = useSelector((state) => state.game.styles);
+  const style = useSelector((state) => state.game.value);
 
   const froggyRef = useRef();
 
   useEffect(() => {
-    froggyRef.current.style = style;
-    if (level.answer.trim() === style.trim()) {
-      dispatch(gameActions.gameStyle(level.answer));
-      alert('worked');
+     if(level.answer.trim() === style.trim()) {
+      dispatch(gameActions.complete());
+    } else {
+      dispatch(gameActions.notComplete())
     }
+    froggyRef.current.style = style;
   }, [style]);
 
   const froggys = () => {

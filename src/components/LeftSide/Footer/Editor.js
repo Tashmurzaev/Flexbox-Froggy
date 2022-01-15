@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { gameActions } from '../../../store';
+import 'animate.css';
 
 import classes from './Editor.module.css';
 
@@ -12,7 +13,6 @@ function Editor() {
   );
 
   const [game, setGame] = useState('');
-  const [answerIsValid, setAnswerIsValid] = useState(false);
 
   useEffect(() => {
     dispatch(gameActions.gameStyle(''));
@@ -25,10 +25,18 @@ function Editor() {
   };
 
   const nextGame = () => {
+    if (!level.isValid) {
+      return;
+    }
     dispatch(gameActions.currentState(currentLevel + 1));
   };
 
-  // const btnIsDisabled = level.isValid ? `${classes.enabled}` : classes.disabled;
+  const btnIsDisabled = () => {
+    const btnIsDisabled = level.isValid
+      ? `${classes.enabled} ${'animate__animated animate__swing'}`
+      : classes.disabled;
+    return btnIsDisabled;
+  };
 
   return (
     <div className={classes.editor}>
@@ -38,7 +46,7 @@ function Editor() {
           <br />
           10
         </div>
-        <pre id="before">
+        <pre>
           #pond {'{'} <br /> display: flex;{' '}
         </pre>
         <textarea
@@ -49,9 +57,8 @@ function Editor() {
         ></textarea>
         <pre>{'}'}</pre>
         <button
-          disabled={true}
           onClick={nextGame}
-          className={`${classes.next} ${classes.animation} ${!answerIsValid}`}
+          className={`${classes.next} ${btnIsDisabled()}`}
         >
           Следующий
         </button>
