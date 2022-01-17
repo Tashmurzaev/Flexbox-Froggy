@@ -3,7 +3,7 @@ import classes from './gameLevel.module.css';
 
 const init = {
   currentLevel: 1,
-  styles: '', 
+  value: '',
   currentLevels: [
     {
       level: 1,
@@ -56,7 +56,8 @@ const init = {
         </>
       ),
 
-      answer: 'justify-content: flex-end',
+      answer: 'justify-content: flex-end;',
+      isValid: false,
       pondHeight: 1,
       colors: ['green'],
       lilypad: { justifyContent: 'flex-end' },
@@ -96,7 +97,8 @@ const init = {
         </>
       ),
 
-      answer: 'justify-content: center',
+      answer: 'justify-content: center;',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow'],
       lilypad: { justifyContent: 'center' },
@@ -119,7 +121,8 @@ const init = {
         </>
       ),
 
-      answer: 'justify-content: space-around',
+      answer: 'justify-content: space-around;',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
       lilypad: { justifyContent: 'space-around' },
@@ -137,7 +140,8 @@ const init = {
         </>
       ),
 
-      answer: 'justify-content: space-between',
+      answer: 'justify-content: space-between;',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
       lilypad: { justifyContent: 'space-between' },
@@ -177,10 +181,11 @@ const init = {
         </>
       ),
 
-      answer: 'justify-content: flex-end',
+      answer: 'align-items: flex-end;',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
-      lilypad: { justifyContent: 'flex-end' },
+      lilypad: { alignItems: 'flex-end' },
     },
     {
       level: 6,
@@ -195,8 +200,9 @@ const init = {
       ),
 
       answer: 'justify-content: center; align-items: center;',
+      isValid: false,
       pondHeight: 2,
-      colors: ['green', 'yellow', 'red'],
+      colors: ['green'],
       lilypad: { justifyContent: 'center', alignItems: 'center' },
     },
     {
@@ -213,6 +219,7 @@ const init = {
       ),
 
       answer: 'justify-content: space-around; align-items: flex-end;',
+      isValid: false,
       pondHeight: 2,
       colors: ['green', 'yellow', 'red'],
       lilypad: { justifyContent: 'space-around', alignItems: 'flex-end' },
@@ -246,6 +253,7 @@ const init = {
       ),
 
       answer: 'flex-direction: row-reverse;',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
       lilypad: { flexDirection: 'row-reverse' },
@@ -279,6 +287,7 @@ const init = {
       ),
 
       answer: 'flex-direction: column;',
+      isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
       lilypad: { flexDirection: 'column' },
@@ -303,6 +312,7 @@ const init = {
       ),
 
       answer: 'flex-direction: row-reverse; justijy-content: flex-end;',
+      isValid: false,
       pondHeight: 2,
       colors: ['green', 'yellow', 'red'],
       lilypad: { flexDirection: 'row-reverse', justifyContent: 'flex-end' },
@@ -326,6 +336,7 @@ const init = {
       ),
 
       answer: 'flex-direction: column; justijy-content: flex-end;',
+      isValid: false,
       pondHeight: 2,
       colors: ['green', 'yellow', 'red'],
       lilypad: { flexDirection: 'column', justifyContent: 'flex-end' },
@@ -343,6 +354,7 @@ const init = {
       ),
 
       answer: 'flex-direction: column-reverse; justijy-content: space-between;',
+      isValid: false,
       pondHeight: 2,
       colors: ['green', 'yellow', 'red'],
       lilypad: {
@@ -365,6 +377,7 @@ const init = {
 
       answer:
         'flex-direction: row-reverse; align-items: flex-end; justijy-content: center;',
+      isValid: false,
       pondHeight: 3,
       colors: ['green', 'yellow', 'red'],
       lilypad: {
@@ -373,68 +386,65 @@ const init = {
         justifyContent: 'center',
       },
     },
-    {
-      level: 14,
-      questionDescription: (
-        <>
-          <p>
-            Иногда изменения порядка отображения элементов в контейнере
-            недостаточно. В таких случаях мы можем применить свойство{' '}
-            <code className={classes.help}>order</code> для конкретных
-            элементов. По умолчанию, значение этого свойства у элементов равно
-            0, но мы можем задать положительное или отрицательное целое число
-            этому свойству.
-          </p>
-          <p>
-            Используй свойство <code className={classes.help}>order</code>, чтоб
-            разместить лягушат на своих лилиях.
-          </p>
-        </>
-      ),
+    // {
+    //   level: 14,
+    //   questionDescription: (
+    //     <>
+    //       <p>
+    //         Иногда изменения порядка отображения элементов в контейнере
+    //         недостаточно. В таких случаях мы можем применить свойство{' '}
+    //         <code className={classes.help}>order</code> для конкретных
+    //         элементов. По умолчанию, значение этого свойства у элементов равно
+    //         0, но мы можем задать положительное или отрицательное целое число
+    //         этому свойству.
+    //       </p>
+    //       <p>
+    //         Используй свойство <code className={classes.help}>order</code>, чтоб
+    //         разместить лягушат на своих лилиях.
+    //       </p>
+    //     </>
+    //   ),
 
-      answer: 'order: 1;',
-      pondHeight: 1,
-      colors: ['green', 'yellow', 'red'],
-      lilypad: {
-        order: '1',
-      },
-    },
-    {
-      level: 15,
-      questionDescription: (
-        <>
-          <p>
-            Используй свойство <code className={classes.help}>order</code>, чтоб
-            отправить красного лягушонка на его лилию.
-          </p>
-        </>
-      ),
+    //   answer: 'order: 1;',
+    //   isValid: false,
+    //   pondHeight: 1,
+    //   colors: ['green', 'yellow', 'red'],
+    //   lilypadItem: { color: 'yellow', style: { order: '2' } },
+    // },
+    // {
+    //   level: 15,
+    //   questionDescription: (
+    //     <>
+    //       <p>
+    //         Используй свойство <code className={classes.help}>order</code>, чтоб
+    //         отправить красного лягушонка на его лилию.
+    //       </p>
+    //     </>
+    //   ),
 
-      answer: 'order: -1;',
-      pondHeight: 1,
-      colors: ['green', 'green', 'green', 'red', 'green'],
-      lilypad: {
-        order: '-1',
-      },
-    },
-    {
-      level: 16,
-      questionDescription: (
-        <>
-          <p>
-            Используй свойство <code className={classes.help}>order</code>, чтоб
-            отправить красного лягушонка на его лилию.
-          </p>
-        </>
-      ),
+    //   answer: 'order: -1;',
+    //   isValid: false,
+    //   pondHeight: 1,
+    //   colors: ['green', 'green', 'green', 'red', 'green'],
+    //   lilypadItem: { color: 'red', style: { order: '-1' } },
+    // },
+    // {
+    //   level: 16,
+    //   questionDescription: (
+    //     <>
+    //       <p>
+    //         Используй свойство <code className={classes.help}>order</code>, чтоб
+    //         отправить красного лягушонка на его лилию.
+    //       </p>
+    //     </>
+    //   ),
 
-      answer: 'align-self: end',
-      pondHeight: 1,
-      colors: ['green', 'green', 'yellow', 'green', 'green'],
-      lilypad: {
-        alignSelf: 'end',
-      },
-    },
+    //   answer: 'align-self: end;',
+    //   isValid: false,
+    //   pondHeight: 1,
+    //   colors: ['green', 'green', 'yellow', 'green', 'green'],
+    //   lilypadItem: { color: 'yellow', style: { alignSelf: 'flex-end' } },
+    // },
   ],
 };
 
@@ -449,8 +459,18 @@ const gameSlice = createSlice({
       state.currentLevel = action.payload;
     },
     gameStyle(state, action) {
-      state.styles = action.payload
-    } 
+      state.value = action.payload;
+    },
+    complete(state) {
+      state.currentLevels = state.currentLevels.map((item) =>
+        item.level === state.currentLevel ? { ...item, isValid: true } : item
+      );
+    },
+    notComplete(state) {
+      state.currentLevels = state.currentLevels.map((item) =>
+        item.level === state.currentLevel ? { ...item, isValid: false } : item
+      );
+    },
   },
 });
 

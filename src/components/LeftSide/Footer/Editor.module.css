@@ -45,25 +45,25 @@ button {
   line-height: 24px;
   color: #fff;
   cursor: pointer;
-  -webkit-user-select: none;
+  /* -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   -webkit-appearance: none;
-  appearance: none;
+  appearance: none; */
 }
 
-.animation {
+/* .animation {
   animation: tada 1s, pulse 2s infinite 2s;
-}
+} */
 
 button:active {
   outline: none;
 }
 
-button:not(.disabled):hover {
+/* button:not(.disabled):hover {
   background-color: #f12d22;
-}
+} */
 
 .next {
   position: absolute;
@@ -72,8 +72,17 @@ button:not(.disabled):hover {
   padding-top: 0.3em;
 }
 
-.next.disabled {
+/* .next.disabled {
   opacity: 0.5;
+} */
+
+.disabled {
+  opacity: 0.5;
+  cursor: no-drop;
+}
+
+.enabled {
+  opacity: 1;
 }
 
 .code {
