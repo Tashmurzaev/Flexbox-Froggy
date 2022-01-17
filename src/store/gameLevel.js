@@ -97,7 +97,7 @@ const init = {
         </>
       ),
 
-      answer: 'justify-content: center',
+      answer: 'justify-content: center;',
       isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow'],
@@ -121,7 +121,7 @@ const init = {
         </>
       ),
 
-      answer: 'justify-content: space-around',
+      answer: 'justify-content: space-around;',
       isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
@@ -140,7 +140,7 @@ const init = {
         </>
       ),
 
-      answer: 'justify-content: space-between',
+      answer: 'justify-content: space-between;',
       isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
@@ -181,11 +181,11 @@ const init = {
         </>
       ),
 
-      answer: 'justify-content: flex-end',
+      answer: 'align-items: flex-end;',
       isValid: false,
       pondHeight: 1,
       colors: ['green', 'yellow', 'red'],
-      lilypad: { justifyContent: 'flex-end' },
+      lilypad: { alignItems: 'flex-end' },
     },
     {
       level: 6,
@@ -202,7 +202,7 @@ const init = {
       answer: 'justify-content: center; align-items: center;',
       isValid: false,
       pondHeight: 2,
-      colors: ['green', 'yellow', 'red'],
+      colors: ['green'],
       lilypad: { justifyContent: 'center', alignItems: 'center' },
     },
     {
@@ -386,65 +386,65 @@ const init = {
         justifyContent: 'center',
       },
     },
-    {
-      level: 14,
-      questionDescription: (
-        <>
-          <p>
-            Иногда изменения порядка отображения элементов в контейнере
-            недостаточно. В таких случаях мы можем применить свойство{' '}
-            <code className={classes.help}>order</code> для конкретных
-            элементов. По умолчанию, значение этого свойства у элементов равно
-            0, но мы можем задать положительное или отрицательное целое число
-            этому свойству.
-          </p>
-          <p>
-            Используй свойство <code className={classes.help}>order</code>, чтоб
-            разместить лягушат на своих лилиях.
-          </p>
-        </>
-      ),
+    // {
+    //   level: 14,
+    //   questionDescription: (
+    //     <>
+    //       <p>
+    //         Иногда изменения порядка отображения элементов в контейнере
+    //         недостаточно. В таких случаях мы можем применить свойство{' '}
+    //         <code className={classes.help}>order</code> для конкретных
+    //         элементов. По умолчанию, значение этого свойства у элементов равно
+    //         0, но мы можем задать положительное или отрицательное целое число
+    //         этому свойству.
+    //       </p>
+    //       <p>
+    //         Используй свойство <code className={classes.help}>order</code>, чтоб
+    //         разместить лягушат на своих лилиях.
+    //       </p>
+    //     </>
+    //   ),
 
-      answer: 'order: 1;',
-      isValid: false,
-      pondHeight: 1,
-      colors: ['green', 'yellow', 'red'],
-      lilypad: { color: 'yellow', style: { order: '2' } },
-    },
-    {
-      level: 15,
-      questionDescription: (
-        <>
-          <p>
-            Используй свойство <code className={classes.help}>order</code>, чтоб
-            отправить красного лягушонка на его лилию.
-          </p>
-        </>
-      ),
+    //   answer: 'order: 1;',
+    //   isValid: false,
+    //   pondHeight: 1,
+    //   colors: ['green', 'yellow', 'red'],
+    //   lilypadItem: { color: 'yellow', style: { order: '2' } },
+    // },
+    // {
+    //   level: 15,
+    //   questionDescription: (
+    //     <>
+    //       <p>
+    //         Используй свойство <code className={classes.help}>order</code>, чтоб
+    //         отправить красного лягушонка на его лилию.
+    //       </p>
+    //     </>
+    //   ),
 
-      answer: 'order: -1;',
-      isValid: false,
-      pondHeight: 1,
-      colors: ['green', 'green', 'green', 'red', 'green'],
-      lilypad: { color: 'red', style: { order: '-1' } },
-    },
-    {
-      level: 16,
-      questionDescription: (
-        <>
-          <p>
-            Используй свойство <code className={classes.help}>order</code>, чтоб
-            отправить красного лягушонка на его лилию.
-          </p>
-        </>
-      ),
+    //   answer: 'order: -1;',
+    //   isValid: false,
+    //   pondHeight: 1,
+    //   colors: ['green', 'green', 'green', 'red', 'green'],
+    //   lilypadItem: { color: 'red', style: { order: '-1' } },
+    // },
+    // {
+    //   level: 16,
+    //   questionDescription: (
+    //     <>
+    //       <p>
+    //         Используй свойство <code className={classes.help}>order</code>, чтоб
+    //         отправить красного лягушонка на его лилию.
+    //       </p>
+    //     </>
+    //   ),
 
-      answer: 'align-self: end;',
-      isValid: false,
-      pondHeight: 1,
-      colors: ['green', 'green', 'yellow', 'green', 'green'],
-      lilypad: { color: 'yellow', style: { alignSelf: 'flex-end' } },
-    },
+    //   answer: 'align-self: end;',
+    //   isValid: false,
+    //   pondHeight: 1,
+    //   colors: ['green', 'green', 'yellow', 'green', 'green'],
+    //   lilypadItem: { color: 'yellow', style: { alignSelf: 'flex-end' } },
+    // },
   ],
 };
 

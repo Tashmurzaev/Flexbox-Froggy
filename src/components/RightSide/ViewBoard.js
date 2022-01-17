@@ -15,7 +15,7 @@ function ViewBoard() {
   const froggyRef = useRef();
 
   useEffect(() => {
-     if(level.answer.trim() === style.trim()) {
+     if(level.answer.split('').sort().join('').trim() === style.split('').sort().join('').trim()) {
       dispatch(gameActions.complete());
     } else {
       dispatch(gameActions.notComplete())
