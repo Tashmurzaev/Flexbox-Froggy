@@ -311,7 +311,7 @@ const init = {
         </>
       ),
 
-      answer: 'flex-direction: row-reverse; justijy-content: flex-end;',
+      answer: 'flex-direction: row-reverse; justify-content: flex-end;',
       isValid: false,
       pondHeight: 2,
       colors: ['green', 'yellow', 'red'],
@@ -335,7 +335,7 @@ const init = {
         </>
       ),
 
-      answer: 'flex-direction: column; justijy-content: flex-end;',
+      answer: 'flex-direction: column; justify-content: flex-end;',
       isValid: false,
       pondHeight: 2,
       colors: ['green', 'yellow', 'red'],
@@ -353,7 +353,7 @@ const init = {
         </>
       ),
 
-      answer: 'flex-direction: column-reverse; justijy-content: space-between;',
+      answer: 'flex-direction: column-reverse; justify-content: space-between;',
       isValid: false,
       pondHeight: 2,
       colors: ['green', 'yellow', 'red'],
@@ -376,7 +376,7 @@ const init = {
       ),
 
       answer:
-        'flex-direction: row-reverse; align-items: flex-end; justijy-content: center;',
+        'flex-direction: row-reverse; align-items: flex-end; justify-content: center;',
       isValid: false,
       pondHeight: 3,
       colors: ['green', 'yellow', 'red'],
